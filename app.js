@@ -1,9 +1,13 @@
+import Products from "./models/products.js";
 import { fetchData } from "./utils/httpReq.js";
 
-// function render() {}
+const productsNode = document.getElementById("products");
+
 const render = async () => {
     const productsData = await fetchData();
-    console.log(productsData);
+    const productsInstance = new Products(productsNode, productsData);
+
+    productsInstance.showProducts();
 };
 
 document.addEventListener("DOMContentLoaded", render);
