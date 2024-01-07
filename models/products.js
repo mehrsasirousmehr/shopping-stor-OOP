@@ -55,7 +55,7 @@ class Products {
         const product = this.products.find((i) => i.id === +id);
         // add products to Cart
         this.cart.products.push(product);
-        console.log(this.cart);
+        this.cart.showProducts();
     }
 }
 
